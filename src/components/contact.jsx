@@ -1,18 +1,18 @@
 import React from "react";
-import { FaFacebook, FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope,  FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
    const sFunc = (link, icon, title) => {
       return { link, icon, title };
    };
    const sArr = [
-      sFunc("https://twiter.com", <FaTwitter />, "Twitter"),
-      sFunc("https://twiter.com", <FaFacebook />, "Facebook"),
-      sFunc("https://twiter.com", <FaTelegram />, "Telegram"),
-      sFunc("https://twiter.com", <FaWhatsapp />, "Whatsapp"),
+      sFunc("https://twitter.com/cryptotwist1", <FaTwitter />, "Twitter"),
+      sFunc("mailto:emmanuelofozobatwist@gmail.com", <FaEnvelope />, "Email"),
+      sFunc("https://t.me/TwistDe", <FaTelegram />, "Telegram"),
+      sFunc("https://wa.me/2349066127007", <FaWhatsapp />, "Whatsapp"),
    ];
    return (
-      <div className="contact">
+      <div className="contact" id="social">
          <div className="container">
             <div className="row align-items-center">
                <div className="col-12 col-lg-6">

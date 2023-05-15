@@ -17,11 +17,10 @@ export default function About() {
       abtFunc(<FaChess />, "Degen Trader"),
       abtFunc(<FaGraduationCap />, "Defi Tutor"),
       abtFunc(<FaChartLine />, "Technical Analyst"),
-      abtFunc(<FaChartBar />, "Forex Trader"),
       abtFunc(<FaBitcoin />, "Crypto Trader"),
    ];
    return (
-      <div className="about">
+      <div className="about" id="about">
          <div className="container">
             <div className="row align-items-center ">
                <div className="col-lg-6 col-12">
@@ -39,11 +38,19 @@ export default function About() {
                         </div>
                         <div className="abt-body">
                            <p>
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Ratione at accusantium ipsam accusamus
-                              consequuntur provident repellendus dolores ea!
-                              Similique fugiat quae sed sint repellat ad
-                              cupiditate praesentium, libero nulla temporibus.
+                              Twist is a Degen Trader who thrives on the thrill
+                              of risk and chaos. As a DeFi tutor, he share
+                              his extensive knowledge to guide others through
+                              the complexities of decentralized finance. His
+                              role as a technical analyst allows him to
+                              decipher patterns and extract valuable insights
+                              from the crypto market's volatility. Twist
+                              fearlessly navigates the treacherous waters of
+                              cryptocurrency trading, capitalizing on
+                              opportunities with unwavering confidence. His
+                              adventurous spirit and expertise position him as
+                              an influential force shaping the future of
+                              finance.
                            </p>
                         </div>
                      </div>
