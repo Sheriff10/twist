@@ -41,7 +41,7 @@ export default function Contact() {
                      <div className="c-form-head">
                         <h4>Send us an email</h4>
                      </div>
-                     <form className="form" action="mailto:youraddr@domain.tld" method="GET">
+                     <form className="form" action="mailto:emmanuelofozobatwist@gmail.com" method="GET">
                         <div className="form-group">
                            <input
                               type="text"
