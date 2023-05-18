@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEnvelope,  FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaEnvelope,  FaInstagram,  FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
    const sFunc = (link, icon, title) => {
@@ -10,6 +10,7 @@ export default function Contact() {
       sFunc("mailto:emmanuelofozobatwist@gmail.com", <FaEnvelope />, "Email"),
       sFunc("https://t.me/TwistDe", <FaTelegram />, "Telegram"),
       sFunc("https://wa.me/2349066127007", <FaWhatsapp />, "Whatsapp"),
+      sFunc("https://instagram.com/crypto_twist", <FaInstagram />, "Whatsapp"),
    ];
    return (
       <div className="contact" id="social">
