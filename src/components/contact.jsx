@@ -10,7 +10,7 @@ export default function Contact() {
       sFunc("mailto:emmanuelofozobatwist@gmail.com", <FaEnvelope />, "Email"),
       sFunc("https://t.me/TwistDe", <FaTelegram />, "Telegram"),
       sFunc("https://wa.me/2349066127007", <FaWhatsapp />, "Whatsapp"),
-      sFunc("https://instagram.com/crypto_twist", <FaInstagram />, "Whatsapp"),
+      sFunc("https://instagram.com/crypto_twist", <FaInstagram />, "Instagram"),
    ];
    return (
       <div className="contact" id="social">
