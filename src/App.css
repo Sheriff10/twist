@@ -1,7 +1,6 @@
 body {
    background: #111111;
-   /* color: #5916f3; */
-   overflow-x: hidden;
+   overflow: none;
 }
 .bg-purple {
    background: #5916f3;
@@ -239,6 +238,7 @@ body {
 .header .container {
    border-bottom: 1px solid #3e3e3e;
    padding: 10px 0px;
+   overflow-x: hidden;
 }
 .header a {
    color: #dcdcdc;
@@ -255,11 +255,11 @@ body {
       width: 50vw;
       padding: 5px;
       border-radius: 10px;
-      transform: translateX(100vw);
+      transform: translateY(-50vh);
       transition: 0.5s ease;
    }
    .header .menu-con ul.show {
-      transform: translateX(0vw);
+      transform: translateY(0vh);
       transition: 0.5s ease;
    }
    .header .menu-con ul li {
@@ -269,6 +269,9 @@ body {
    }
    .header .menu-con ul li:hover {
       background: #5916f3;
+   }
+   .intro .img-con {
+      display: none;
    }
 }
 
