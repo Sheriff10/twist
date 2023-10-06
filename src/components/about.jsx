@@ -20,13 +20,13 @@ export default function About() {
       abtFunc(<FaBitcoin />, "Crypto Trader"),
    ];
    return (
-      <div className="about" id="about">
+      <div className="about px-3" id="about">
          <div className="container">
             <div className="row align-items-center ">
                <div className="col-lg-6 col-12">
                   <div className="abt-con">
                      <div className="wrapper">
-                        <div className="abt-img">
+                        <div className="abt-img mb-4">
                            <img
                               src="twist.png"
                               alt="Twist"
@@ -34,23 +34,23 @@ export default function About() {
                            />
                         </div>
                         <div className="abt-head">
-                           <span className="text-bold">About Twist</span>
+                           <small className="badge bg-purple">About</small> <br />
+                           <span className="text-bold fs-1 text-light">Background Check</span>
                         </div>
-                        <div className="abt-body">
+                        <div className="abt-body text-muted">
                            <p>
                               Twist is a Degen Trader who thrives on the thrill
-                              of risk and chaos. As a DeFi tutor, he share
-                              his extensive knowledge to guide others through
-                              the complexities of decentralized finance. His
-                              role as a technical analyst allows him to
-                              decipher patterns and extract valuable insights
-                              from the crypto market's volatility. Twist
-                              fearlessly navigates the treacherous waters of
-                              cryptocurrency trading, capitalizing on
-                              opportunities with unwavering confidence. His
-                              adventurous spirit and expertise position him as
-                              an influential force shaping the future of
-                              finance.
+                              of risk and chaos. As a DeFi tutor, he share his
+                              extensive knowledge to guide others through the
+                              complexities of decentralized finance. His role as
+                              a technical analyst allows him to decipher
+                              patterns and extract valuable insights from the
+                              crypto market's volatility. Twist fearlessly
+                              navigates the treacherous waters of cryptocurrency
+                              trading, capitalizing on opportunities with
+                              unwavering confidence. His adventurous spirit and
+                              expertise position him as an influential force
+                              shaping the future of finance.
                            </p>
                         </div>
                      </div>
@@ -61,7 +61,7 @@ export default function About() {
                      {abtArr.map((i, index) => (
                         <div className="col-lg-4 p-2 col-6 cc" key={index}>
                            <div className="abt-icon">
-                              <i>{i.icon}</i> <br />
+                              <i className="text-purple">{i.icon}</i> <br />
                               <span>{i.title}</span>
                            </div>
                         </div>

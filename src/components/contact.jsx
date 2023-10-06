@@ -1,5 +1,15 @@
 import React from "react";
-import { FaEnvelope,  FaInstagram,  FaTelegram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import {
+   FaEnvelope,
+   FaInstagram,
+   FaLocationArrow,
+   FaPhone,
+   FaTelegram,
+   FaThinkPeaks,
+   FaTwitter,
+   FaWhatsapp,
+} from "react-icons/fa";
+import { MdChatBubble } from "react-icons/md";
 
 export default function Contact() {
    const sFunc = (link, icon, title) => {
@@ -12,16 +22,83 @@ export default function Contact() {
       sFunc("https://wa.me/2349066127007", <FaWhatsapp />, "Whatsapp"),
       sFunc("https://instagram.com/crypto_twist", <FaInstagram />, "Instagram"),
    ];
+
+   const cFunc = (icon, title, text, linkText, link) => {
+      return { icon, title, text, linkText, link };
+   };
+   const cArr = [
+      cFunc(
+         <MdChatBubble />,
+         "Send me a message",
+         "Reach with any questions.",
+         "twist@gmail.com",
+         "/"
+      ),
+      cFunc(
+         <FaPhone />,
+         "Call us",
+         "Feel free to call our team.",
+         "+234 906 612 7007",
+         "/"
+      ),
+      cFunc(
+         <FaLocationArrow />,
+         "Visit us",
+         "Come check out our office.",
+         "Socials below",
+         "/"
+      ),
+   ];
    return (
-      <div className="contact" id="social">
+      <div className="contact px-3" id="social">
          <div className="container">
+            <div className="heading text-center pb-5">
+               <small className="badge bg-purple">Contact Us</small>
+               <h1 className="text-light">Say Hi</h1>
+               <span className="text-muted">
+                  I'm always happy to hear from you!
+               </span>
+            </div>
+            <div className="row">
+               {cArr.map((card, index) => (
+                  <div className="col-lg-4 mb-4 " key={index}>
+                  <div className="card h-100">
+                     <div className="card-icon d-flex align-items-center px-4 py-4">
+                        <span className="c-icon text-purple fs-3">
+                           {card.icon}
+                        </span>
+                     </div>
+                     <div className="card-body">
+                        <div className="head py-2">
+                           <span className="fw-bold fs-5 text-light">
+                              {card.title}
+                           </span>
+                        </div>
+                        <div className="text py-2">
+                           <span className="text-muted">
+                              {card.text}
+                           </span>
+                        </div>
+                        <div className="text py-2">
+                           <span className="text-purple  fw-bold">
+                              {card.linkText}
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               ))}
+            </div>
+         </div> <br /><br />
+
+         <div className="container py-5">
             <div className="row align-items-center">
                <div className="col-12 col-lg-6">
                   <div className="socials">
                      <div className="s-head">
                         <b>
-                           <h4>Socials</h4>
-                           <small className="text-bold">
+                           <small className="badge bg-purple">Socials</small> <br />
+                           <small className="fs-4 text-light">
                               Let's Connect Together
                            </small>
                         </b>
@@ -40,7 +117,7 @@ export default function Contact() {
                <div className="col-12 col-lg-6">
                   <div className="c-form">
                      <div className="c-form-head">
-                        <h4>Send us an email</h4>
+                        <h4 className="text-purple fw-bold">Send a Message. Happy you reached out</h4>
                      </div>
                      <form className="form" action="mailto:emmanuelofozobatwist@gmail.com" method="GET">
                         <div className="form-group">
@@ -67,7 +144,7 @@ export default function Contact() {
                               type="submit"
                               value="Send Email"
                               id="submit"
-                              className="btn"
+                              className="btn bg-purple"
                            />
                         </div>
                      </form>
