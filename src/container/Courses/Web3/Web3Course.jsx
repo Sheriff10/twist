@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCheck, FaHome, FaLightbulb } from "react-icons/fa";
 import Footer from "../../../components/footer";
 import Header from "../../../components/header";
+import Payment from "../../Payment/Payment";
 
 export default function Web3Course() {
    const dum = [1, 2, 3, 4, 5, 56, , 66, 6, 6, 66];
+   const [showCheckout, setShowCheckout] = useState(false);
+
+   const toggleCheckout = () => {
+      setShowCheckout(!showCheckout);
+   };
    return (
       <div className="web3-cours">
          <Header />
+         <Payment show={showCheckout} toggle={toggleCheckout} />
 
          {/* Course Intro  */}
          <div className="container py-5">
@@ -27,7 +34,7 @@ export default function Web3Course() {
                      </small>
                   </div>
                   <div className="btn-wrap mt-4">
-                     <button className="btn bg-purple-grad text-gray p-3 fw-bold">
+                     <button className="btn bg-purple-grad text-gray p-3 fw-bold" onClick={toggleCheckout}>
                         Purchase Course For (150$){" "}
                      </button>
                   </div>
@@ -42,7 +49,10 @@ export default function Web3Course() {
                      <div className="list text-gray">
                         <ul className="m-0 p-0">
                            {dum.map((list, index) => (
-                              <li className="d-flex align-items-center lh-4 gap-3 mb-2" key={index}>
+                              <li
+                                 className="d-flex align-items-center lh-4 gap-3 mb-2"
+                                 key={index}
+                              >
                                  <FaHome className="text-dark" />{" "}
                                  <span>Beginner to Pro</span>
                               </li>

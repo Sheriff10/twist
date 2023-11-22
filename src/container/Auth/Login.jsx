@@ -6,7 +6,9 @@ export default function Login() {
    return (
       <div className="login">
          <div className="header bg-darc py-3 text-center">
-            <img src="/logo.png" alt="CryptoTwist" width={50} />
+            <Link to={"/"}>
+               <img src="/logo.png" alt="CryptoTwist" width={50} />
+            </Link>
          </div>
          <div className="container">
             <div className="col-lg-5 col-md-6 mx-auto py-5">
