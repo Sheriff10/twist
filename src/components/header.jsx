@@ -1,13 +1,11 @@
 import React from "react";
-import { FaBars, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { FaBars, FaPhone, FaPhoneAlt } from "react-icons/fa";
 
 export default function Header() {
    const toggleMenu = () => {
       const menuCon = document.querySelector(".menu-con ul");
       menuCon.classList.toggle("show");
    };
-   const navi = useNavigate();
    return (
       <div className="header">
          <div className="container">
@@ -18,35 +16,24 @@ export default function Header() {
                <div className="menu-con">
                   <ul className="list-unstyled text-light fw-bold d-flex gap-5 m-0">
                      <li>
-                        <Link to="/">Home</Link>
+                        <a href="#">About</a>
                      </li>
                      <li>
-                        <Link to="/#about">About</Link>
+                        <a href="#">Say Hi</a>
                      </li>
                      <li>
-                        <Link to="/#contact">Contact</Link>
+                        <a href="#">Socials</a>
                      </li>
-                     <li className="position-relative">
-                        <Link to="/courses/web3">
-                           Course{" "}
-                           <small className="badge bg-purple new rounded-pill position-absolute top-0 start-100">
-                              new
-                           </small>
-                        </Link>
+                     <li>
+                        <a href="#">Send a Message</a>
                      </li>
                   </ul>
                </div>
                <div className="btn-wrap">
-                  <button
-                     className="btn bg-purple px-3 py-2 text-light fw-bold"
-                     onClick={() => navi("/member/auth/signup")}
-                  >
-                     Become a Student
+                  <button className="btn bg-purple px-3 py-2 text-light">
+                     Contact <FaPhone />{" "}
                   </button>
-                  <div
-                     className="btn bg-dark text-light ms-3"
-                     onClick={toggleMenu}
-                  >
+                  <div className="btn bg-dark text-light ms-3" onClick={toggleMenu}>
                      <FaBars />
                   </div>
                </div>
