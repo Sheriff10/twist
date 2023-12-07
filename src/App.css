@@ -303,3 +303,12 @@ background: linear-gradient(90deg, rgba(89,22,243,1) 0%, rgba(173,12,194,1) 55%)
 .text-right {
    text-align: right;
 }
+
+.payment{
+   z-index: 10;
+   background: #00000038;
+   backdrop-filter: blur(10px);
+}
+.new {
+   font-size: 8px;
+}

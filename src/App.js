@@ -1,18 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-
-import Intro from "./components/intro";
-import About from "./components/about";
-import Contact from "./components/contact";
-import Footer from "./components/footer";
-import Header from "./components/header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./container/Home/Home";
 import Web3Course from "./container/Courses/Web3/Web3Course";
 import Watch from "./container/Courses/Web3/Watch/Watch";
 import Signup from "./container/Auth/Signup";
 import Login from "./container/Auth/Login";
-import Admin from "./container/Admin/Admin";
 
 function App() {
    return (
@@ -25,7 +18,7 @@ function App() {
             <Route path="/member/auth/login" element={<Login />} />
 
             {/* Admin */}
-            <Route path="/admin/dashboard" element={<Admin />} />
+            {/* <Route path="/admin/dashboard" element={<Admin />} /> */}
          </Routes>
       </div>
    );
