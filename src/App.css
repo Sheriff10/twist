@@ -9,8 +9,12 @@ body {
    color: #5916f3;
 }
 .bg-purple-grad {
-   background: rgb(89,22,243);
-background: linear-gradient(90deg, rgba(89,22,243,1) 0%, rgba(173,12,194,1) 55%);
+   background: rgb(89, 22, 243);
+   background: linear-gradient(
+      90deg,
+      rgba(89, 22, 243, 1) 0%,
+      rgba(173, 12, 194, 1) 55%
+   );
 }
 .text-gray {
    color: #d1d1d1;
@@ -304,11 +308,28 @@ background: linear-gradient(90deg, rgba(89,22,243,1) 0%, rgba(173,12,194,1) 55%)
    text-align: right;
 }
 
-.payment{
+.payment {
    z-index: 10;
    background: #00000038;
    backdrop-filter: blur(10px);
 }
 .new {
    font-size: 8px;
+}
+
+/* Admin Dashboard */
+.admin-dashboard .card {
+   border: 1px solid #5916f3;
+   border-radius: 20px;
+}
+.admin-dashboard .row {
+   min-height: 70vh;
+   align-items: center;
+}
+
+/* BreadCrumb */
+.bc img {
+   width: 50px;
+   border-radius: 50%;
+   border: 2px solid #fff;
 }

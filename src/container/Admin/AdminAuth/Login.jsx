@@ -1,9 +1,9 @@
 import React from "react";
+import { FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Footer from "../../components/footer";
-import LogoHeader from "../../components/LogoHeader";
+import LogoHeader from "../../../components/LogoHeader";
 
-export default function Login() {
+export default function AdminLogin() {
    return (
       <div className="login">
          <LogoHeader />
@@ -13,15 +13,8 @@ export default function Login() {
                   <div className="container">
                      <div className="form-head text-center py-4">
                         <span className="text-light fs-3 fw-bold text-center">
-                           Log In
+                           Log In to Admin Dashboard
                         </span>
-                     </div>
-                     <div className="form-group mb-4">
-                        <span>Email</span>
-                        <input
-                           type="text"
-                           className="form-control bg-darc2 border-0 py-2"
-                        />
                      </div>
                      <div className="form-group mb-4">
                         <span>Password</span>
@@ -31,20 +24,9 @@ export default function Login() {
                         />
                      </div>
                      <div className="btn-wrap">
-                        <button className="p-2 btn btn-lg rounded-pill bg-purple w-100 fw-bold text-light">
-                           Log In
+                        <button className="p-2 btn btn-sm rounded-pill bg-purple w-100 fw-bold text-light">
+                           Log In <FaLock />
                         </button>
-                     </div>
-                     <div className="caption my-3">
-                        <span>
-                           Don't have an account?{" "}
-                           <Link
-                              to={"/member/auth/signup"}
-                              className="text-purple"
-                           >
-                              Sign Up
-                           </Link>
-                        </span>
                      </div>
                   </div>
                </form>
