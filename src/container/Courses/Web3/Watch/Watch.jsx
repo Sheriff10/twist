@@ -1,11 +1,74 @@
 import ProgressBar from "@ramonak/react-progress-bar";
-import React from "react";
-import { FaCheckCircle, FaVideo } from "react-icons/fa";
+import React, { useContext, useEffect, useState } from "react";
+import { FaCheckCircle, FaDotCircle, FaVideo } from "react-icons/fa";
 import Footer from "../../../../components/footer";
 import Header from "../../../../components/header";
+import userGetHandler from "../../../../utils/getHandler";
+import userPostHandler from "../../../../utils/postHandler";
 
 export default function Watch() {
    const dum = [1, 2, 3, 4, 5, 56];
+
+   const [courses, setCourses] = useState([]);
+   const [watching, setWatching] = useState("");
+   const [completed, setCompleted] = useState(0);
+
+   useEffect(() => {
+      getCourses();
+   }, []);
+
+   const getCourses = async () => {
+      try {
+         const response = await userGetHandler("/user/course-progress");
+         const crs = response.message.courses;
+         setCourses(crs);
+         calcCompleted(crs);
+         const watchId = response.message.watching;
+         currentWatching(watchId, crs);
+         // console.log(response);
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
+   const currentWatching = (watchId, course) => {
+      // find the Lecture in the course array
+      console.log({ watchId, course });
+      const currentLecture = course.find(
+         (lecture) => lecture.courseId === watchId
+      );
+      console.log(currentLecture);
+      setWatching(currentLecture.courseName);
+   };
+
+   const updateWatching = async (courseId) => {
+      try {
+         const data = { watching: courseId };
+         const response = await userPostHandler("/user/watching", data);
+         getCourses();
+         console.log(response);
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
+   const completeCourse = async (courseId) => {
+      try {
+         const data = { courseId };
+         const response = await userPostHandler("/user/complete-course", data);
+         getCourses();
+         console.log(response);
+      } catch (error) {
+         console.log(error);
+      }
+   };
+
+   const calcCompleted = (course) => {
+      const completedCourse = course.filter(
+         (lecture) => lecture.completed === true
+      );
+      setCompleted(`${completedCourse.length} / ${course.length}`)
+   };
 
    return (
       <div className="watch">
@@ -31,11 +94,11 @@ export default function Watch() {
                      <div className="text-wrap bg-darc2 d-flex align-items-center justify-content-center h-100">
                         <div className="wrap text-center">
                            <span className="fs-4 fw-bold text-gray">
-                              Introduction to Web3
+                              {watching ? watching : "Introduction to Web3"}
                            </span>{" "}
                            <br />
                            <button className="btn bg-purple px-5 mt-3 fw-bold text-light">
-                              Start Lesson
+                              {watching ? "Start Lesson" : "Resume Lessson"}
                            </button>
                         </div>
                      </div>
@@ -53,27 +116,43 @@ export default function Watch() {
                         Web3 Course (8h)
                      </span>{" "}
                      <br />
-                     <small className="text-gray">2/10 completed</small>
+                     <small className="text-gray">{completed} completed</small>
                   </div>
-                  {dum.map((course, index) => (
+                  {courses.map((course, index) => (
                      <div
                         className="wrap bg-darc d-flex justify-content-between align-items-center p-3 mb-2"
                         key={index}
                      >
                         <div className="text-wrap d-flex align-items-center gap-4">
-                           <FaCheckCircle className="fs-4 text-purple" />{" "}
+                           {course.completed ? (
+                              <FaCheckCircle className="fs-4 text-purple" />
+                           ) : (
+                              <FaDotCircle className="fs-4" />
+                           )}
+
                            <div className="txt-wrap">
                               <span className="text-gray">
-                                 Introduction to Web3
+                                 {course.courseName}
                               </span>{" "}
                               <br />
                               <small className="badge bg-purple">
-                                 <FaVideo /> (1:56)
+                                 <FaVideo /> ({course.videoLength}:00)
                               </small>
                            </div>
                         </div>
                         <div className="btn-wrap">
-                           <button className="btn bg-purple-grad text-light fw-bold text-small">
+                           <button
+                              className="btn bg-success me-3 text-light fw-bold text-small"
+                              onClick={() => completeCourse(course.courseId)}
+                           >
+                              {" "}
+                              Complete
+                           </button>
+
+                           <button
+                              className="btn bg-purple-grad text-light fw-bold text-small"
+                              onClick={() => updateWatching(course.courseId)}
+                           >
                               {" "}
                               Start
                            </button>

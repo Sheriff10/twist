@@ -11,25 +11,36 @@ import Students from "./container/Admin/Students";
 import Tuition from "./container/Admin/Tuition";
 import Setting from "./container/Admin/Setting";
 import AdminLogin from "./container/Admin/AdminAuth/Login";
+import Web3InitProvider from "./context/Web3Init";
+import Loader from "./components/Loader";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
-   return (
-      <div className="App">
-         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/courses/web3" element={<Web3Course />} />
-            <Route path="/courses/web3/watch" element={<Watch />} />
-            <Route path="/member/auth/signup" element={<Signup />} />
-            <Route path="/member/auth/login" element={<Login />} />
+   window.api = "http://localhost:5000";
 
-            {/* Admin */}
-            <Route path="/admin/auth" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<Dashboard />} />
-            <Route path="/admin/dashboard/students" element={<Students />} />
-            <Route path="/admin/dashboard/tuition" element={<Tuition />} />
-            <Route path="/admin/dashboard/setting" element={<Setting />} />
-         </Routes>
-      </div>
+   return (
+      <Web3InitProvider>
+         {/* <Loader /> */}
+         <ToastContainer theme={"dark"} />
+         <div className="App">
+            <Routes>
+               <Route path="/" element={<Home />} />
+               <Route path="/courses/web3" element={<Web3Course />} />
+               <Route path="/courses/web3/watch" element={<Watch />} />
+               <Route path="/member/auth/signup" element={<Signup />} />
+               <Route path="/member/auth/login" element={<Login />} />
+
+               {/* Admin */}
+               <Route path="/admin/auth" element={<AdminLogin />} />
+               <Route path="/admin/dashboard" element={<Dashboard />} />
+               <Route path="/admin/dashboard/students" element={<Students />} />
+               <Route path="/admin/dashboard/tuition" element={<Tuition />} />
+               <Route path="/admin/dashboard/setting" element={<Setting />} />
+            </Routes>
+         </div>
+      </Web3InitProvider>
    );
 }
 

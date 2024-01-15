@@ -1,8 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-
-.text-bold{
-    font-weight: bold;
+.text-bold {
+   font-weight: bold;
 }
 .cursor-pointer {
-    cursor: pointer;
+   cursor: pointer;
 }
