@@ -24,7 +24,17 @@ function App() {
    return (
       <Web3InitProvider>
          {/* <Loader /> */}
-         <ToastContainer theme={"dark"} />
+         <ToastContainer
+            theme={"dark"}
+            autoClose={1500}
+            hideProgressBar={true}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable
+            pauseOnHover
+         />
          <div className="App">
             <Routes>
                <Route path="/" element={<Home />} />

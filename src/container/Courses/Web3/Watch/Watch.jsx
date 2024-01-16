@@ -14,15 +14,19 @@ export default function Watch() {
    const [watching, setWatching] = useState("");
    const [completed, setCompleted] = useState(0);
 
-
    // verify if user has paid
    const verifyUserPayment = async () => {
       try {
-         const response = await toast.promise(userGetHandler("/user/verify"), {
-            pending: "Verifying Access",
-            success: "Access Verified",
-            error: "Access Denied, Please Purchase course",
-         });
+         const response = await toast.promise(
+            userGetHandler("/user/verify"),
+            {
+               pending: "Verifying Access",
+               success: "Access Verified",
+               error: "Access Denied, Please Purchase course",
+            },
+            {}
+         );
+         getCourses();
          return true;
       } catch (error) {
          console.log(error);
@@ -30,12 +34,9 @@ export default function Watch() {
       }
    };
 
-   useEffect( () => {
-      const verify =  verifyUserPayment();
-
-      if (verify) getCourses();
+   useEffect(() => {
+      verifyUserPayment();
    }, []);
-
 
    const getCourses = async () => {
       try {
