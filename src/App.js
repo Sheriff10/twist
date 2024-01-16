@@ -18,7 +18,8 @@ import "react-toastify/dist/ReactToastify.css";
 import PaymentCallback from "./container/Payment/PaymentCallback";
 
 function App() {
-   window.api = "http://localhost:5000";
+   window.api = "https://lonely-bass-leg-warmers.cyclic.app";
+   // window.api = "http://localhost:5000";
 
    return (
       <Web3InitProvider>

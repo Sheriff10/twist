@@ -24,7 +24,7 @@ export default function AdminLogin() {
                         />
                      </div>
                      <div className="btn-wrap">
-                        <button className="p-2 btn btn-sm rounded-pill bg-purple w-100 fw-bold text-light">
+                        <button className="p-2 btn btn-sm rounded-pill bg-purple w-100 flex items-center justify-center gap-2 fw-bold text-light">
                            Log In <FaLock />
                         </button>
                      </div>

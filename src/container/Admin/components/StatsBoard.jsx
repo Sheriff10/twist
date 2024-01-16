@@ -10,7 +10,7 @@ export default function StatsBoard() {
             {dum.map((i, index) => (
                <div className="col-lg-4 col-6 mb-3" key={index}>
                   <div className="wrap text-center">
-                     <div className="icon-wrap fs-2 text-purple">
+                     <div className="icon-wrap fs-2 text-purple flex justify-center">
                         <FaFire />
                      </div>
                      <div className="text-wrap text-white">
