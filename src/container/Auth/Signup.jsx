@@ -45,7 +45,7 @@ export default function Signup() {
          <div className="container">
             <div className="col-lg-5 col-md-6 mx-auto py-5">
                <form
-                  className="text-gray bg-darc px-md-5 pb-4"
+                  className="text-gray bg-darc px-3 pb-4"
                   onSubmit={handleSubmit}
                >
                   <div className="container">
@@ -58,7 +58,7 @@ export default function Signup() {
                         <span>Full Name</span>
                         <input
                            type="text"
-                           className="form-control bg-darc2 border-0 py-2"
+                           className="form-control bg-darc2 text-gray-300 border-0 py-2"
                            value={fullname}
                            onChange={(e) => setFullname(e.target.value)}
                            required
@@ -68,7 +68,7 @@ export default function Signup() {
                         <span>Email</span>
                         <input
                            type="email"
-                           className="form-control bg-darc2 border-0 py-2"
+                           className="form-control bg-darc2 text-gray-300 border-0 py-2"
                            value={email}
                            onChange={(e) => setEmail(e.target.value)}
                            required
@@ -78,7 +78,7 @@ export default function Signup() {
                         <span>Password</span>
                         <input
                            type="password"
-                           className="form-control bg-darc2 border-0 py-2"
+                           className="form-control bg-darc2 text-gray-300 border-0 py-2"
                            value={password}
                            onChange={(e) => setPassword(e.target.value)}
                            required
