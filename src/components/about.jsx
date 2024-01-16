@@ -34,8 +34,11 @@ export default function About() {
                            />
                         </div>
                         <div className="abt-head">
-                           <small className="badge bg-purple">About</small> <br />
-                           <span className="text-bold fs-1 text-light">Background Check</span>
+                           <small className="badge bg-purple">About</small>{" "}
+                           <br />
+                           <span className="text-bold fs-1 text-light">
+                              Background Check
+                           </span>
                         </div>
                         <div className="abt-body text-muted">
                            <p>
@@ -58,14 +61,19 @@ export default function About() {
                </div>
                <div className="col-lg-6 col-12">
                   <div className="row justify-content-">
-                     {abtArr.map((i, index) => (
-                        <div className="col-lg-4 p-2 col-6 cc" key={index}>
-                           <div className="abt-icon">
+                     <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 py-4">
+                        {abtArr.map((i, index) => (
+                           // <div className="cc grid grid-cols-1" key={index}>
+                           <div
+                              className="abt-icon flex flex-col justify-center items-center py-4"
+                              key={index}
+                           >
                               <i className="text-purple">{i.icon}</i> <br />
                               <span>{i.title}</span>
                            </div>
-                        </div>
-                     ))}
+                           // </div>
+                        ))}
+                     </div>
                   </div>
                </div>
             </div>

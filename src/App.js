@@ -14,8 +14,8 @@ import AdminLogin from "./container/Admin/AdminAuth/Login";
 import Web3InitProvider from "./context/Web3Init";
 import Loader from "./components/Loader";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
+import PaymentCallback from "./container/Payment/PaymentCallback";
 
 function App() {
    window.api = "http://localhost:5000";
@@ -31,6 +31,10 @@ function App() {
                <Route path="/courses/web3/watch" element={<Watch />} />
                <Route path="/member/auth/signup" element={<Signup />} />
                <Route path="/member/auth/login" element={<Login />} />
+               <Route
+                  path="/member/checkout/callback"
+                  element={<PaymentCallback />}
+               />
 
                {/* Admin */}
                <Route path="/admin/auth" element={<AdminLogin />} />

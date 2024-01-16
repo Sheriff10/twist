@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBars, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { getToken } from "../utils/getHandler";
 
 export default function Header() {
    const toggleMenu = () => {
@@ -8,6 +9,7 @@ export default function Header() {
       menuCon.classList.toggle("show");
    };
    const navi = useNavigate();
+   const token = getToken();
    return (
       <div className="header">
          <div className="container">
@@ -39,9 +41,9 @@ export default function Header() {
                <div className="btn-wrap">
                   <button
                      className="btn bg-purple px-3 py-2 text-light fw-bold"
-                     onClick={() => navi("/member/auth/signup")}
+                     onClick={() => token ? navi("/courses/web3/watch") : navi("/member/auth/signup")}
                   >
-                     Become a Student
+                     {token ? "Dashboard" : "Become a Student"}
                   </button>
                   <div
                      className="btn bg-dark text-light ms-3"

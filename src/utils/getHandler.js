@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext } from "react";
 
-const getToken = () => {
+export const getToken = () => {
    try {
       const jwtToken = window.sessionStorage.getItem("user-token");
       return jwtToken;

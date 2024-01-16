@@ -45,7 +45,7 @@ export default function Web3Course() {
                <div className="col-lg-6">
                   <div className="col-lg-6 rounded p-4 mx-auto bg-purple-grad">
                      <div className="heading fs-4 fw-bold text-white mb-4">
-                        <span className="border-bottom border-dark border-4 py-2">
+                        <span className="border-b-4  border-b-slate-900  py-2">
                            Course Overview
                         </span>
                      </div>
@@ -87,9 +87,9 @@ export default function Web3Course() {
          <div className="content py-5">
             <div className="container">
                <div className="heading mb-4">
-                  <div className="icon-wrap mb-2">
-                     <span className="bg-purple-grad p-2 rounded-circle">
-                        <FaLightbulb className="text-warning" />
+                  <div className="icon-wrap mb-2 flex ">
+                     <span className="bg-purple-grad  p-3 rounded-full">
+                        <FaLightbulb className="text-warning text-xl" />
                      </span>{" "}
                   </div>
                   <div className="text-wrap">

@@ -40,7 +40,7 @@ export default function Payment({ show, toggle }) {
                   <span>Pay with card</span>
                   <div className="btn-wrap">
                      <button
-                        className="btn flutterwave-btn btn-lg btn-warning w-100"
+                        className="btn flutterwave-btn btn-lg btn-warning flex gap-3 justify-center items-center w-full"
                         onClick={flutterwavePayment}
                      >
                         Checkout with Flutterwave{" "}
@@ -61,14 +61,14 @@ export default function Payment({ show, toggle }) {
                   <div className="btn-wrap">
                      {!"userAddress" ? (
                         <button
-                           className="btn bitpay-btn btn-lg bg-light w-100"
+                           className="btn bitpay-btn btn-lg bg-light flex gap-3 justify-center items-center w-full"
                            onClick={"initWeb3"}
                         >
                            Connect Wallet
                         </button>
                      ) : (
                         <button
-                           className="btn bitpay-btn btn-lg bg-light w-100"
+                           className="btn bitpay-btn btn-lg bg-light flex gap-3 justify-center items-center w-full"
                            onClick={() => alert("userAddress")}
                         >
                            Check out{" "}

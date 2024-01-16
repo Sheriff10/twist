@@ -19,8 +19,7 @@ const userPostHandler = async (query, data, loading) => {
       if (!token) {
          // Handle the case where the token is not present
          console.error("No administrator token available.");
-         window.location.href = "/auth/login";
-         return null;
+        return window.location.href = "/member/auth/signin";
       }
 
       // console.log(token);

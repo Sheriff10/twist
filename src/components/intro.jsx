@@ -6,20 +6,20 @@ export default function Intro() {
          <div className="bg-con py-5 px-3">
             <div className="container py-5">
                <div className="row wrapper">
-                  <div className="col-12 col-lg-6 col-md-6">
+                  <div className="col-12 col-lg-6 col-md-6 leading-10">
                      <div className="text-wrap">
                         <small className="badge bg-purple">
                            I'm CryptoTwist
                         </small>
                      </div>
-                     <h1 className="s1 text-light">
+                     <span className="s1 text-light text-4xl md:text-5xl">
                         <b>Crypto Enthusiast.</b>
-                     </h1>
-                     <h1 className="s2 text-light">
+                     </span> <br />
+                     <span className="s2 text-light text-4xl md:text-5xl">
                         <b>
                            DEFI - No Place Like Home. <br /> Degenerate.
                         </b>
-                     </h1>
+                     </span>
                      {/* <div className="doings s3">
                      <span>“Web3”•🏔️🪩Defi Tutor💎🧩 || </span>
                      <span>Crypto Enthusiast ♟️♟️ || </span>

@@ -1,6 +1,7 @@
 import ProgressBar from "@ramonak/react-progress-bar";
 import React, { useContext, useEffect, useState } from "react";
 import { FaCheckCircle, FaDotCircle, FaVideo } from "react-icons/fa";
+import { toast } from "react-toastify";
 import Footer from "../../../../components/footer";
 import Header from "../../../../components/header";
 import userGetHandler from "../../../../utils/getHandler";
@@ -13,9 +14,28 @@ export default function Watch() {
    const [watching, setWatching] = useState("");
    const [completed, setCompleted] = useState(0);
 
-   useEffect(() => {
-      getCourses();
+
+   // verify if user has paid
+   const verifyUserPayment = async () => {
+      try {
+         const response = await toast.promise(userGetHandler("/user/verify"), {
+            pending: "Verifying Access",
+            success: "Access Verified",
+            error: "Access Denied, Please Purchase course",
+         });
+         return true;
+      } catch (error) {
+         console.log(error);
+         return false;
+      }
+   };
+
+   useEffect( () => {
+      const verify =  verifyUserPayment();
+
+      if (verify) getCourses();
    }, []);
+
 
    const getCourses = async () => {
       try {
@@ -67,7 +87,7 @@ export default function Watch() {
       const completedCourse = course.filter(
          (lecture) => lecture.completed === true
       );
-      setCompleted(`${completedCourse.length} / ${course.length}`)
+      setCompleted(`${completedCourse.length} / ${course.length}`);
    };
 
    return (

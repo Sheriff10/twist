@@ -54,7 +54,7 @@ export default function Contact() {
          <div className="container">
             <div className="heading text-center pb-5">
                <small className="badge bg-purple">Contact Us</small>
-               <h1 className="text-light">Say Hi</h1>
+               <h1 className="text-light text-4xl md:text-5xl font-bold">Say Hi</h1>
                <span className="text-muted">
                   I'm always happy to hear from you!
                </span>
@@ -64,7 +64,7 @@ export default function Contact() {
                   <div className="col-lg-4 mb-4 " key={index}>
                   <div className="card h-100">
                      <div className="card-icon d-flex align-items-center px-4 py-4">
-                        <span className="c-icon text-purple fs-3">
+                        <span className="c-icon text-purple flex p-3 text-lg">
                            {card.icon}
                         </span>
                      </div>
@@ -104,11 +104,11 @@ export default function Contact() {
                         </b>
                      </div>
                   </div>
-                  <div className="s-body">
+                  <div className="s-bod">
                      <ul>
                         {sArr.map((i, index) => (
                            <a href={i.link} key={index}>
-                              <i>{i.icon}</i> {i.title} 
+                             <span className="flex items-center gap-3"> {i.icon} {i.title} </span>
                            </a>
                         ))}
                      </ul>
